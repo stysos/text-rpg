@@ -9,8 +9,8 @@ def get_start(starting_choice):
         model='gpt-3.5-turbo',
         messages=[{'role': 'user',
                    'content': f'This is the first start of a text-based RPG game you will take the user through,'
-                              f' please provide numerical options for all options. The user has chose this to start '
-                              f'the game {starting_choice}'}]
+                              f' please provide numerical options for all options. The user has chosen these to start '
+                              f'the game: {starting_choice}'}]
     )
 
     start = completion['choices'][0]['message']['content']
@@ -28,7 +28,7 @@ def get_instruction(user_input):
 
     completion = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
-        messages=[{'role': 'user', 'content': f'The user has chosen option {user_input}, please continue'}]
+        messages=[{'role': 'user', 'content': f'The user has chosen option: {user_input}. please continue'}]
     )
 
     instruction = completion['choices'][0]['message']['content']

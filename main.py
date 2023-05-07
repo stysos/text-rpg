@@ -49,11 +49,6 @@ def main():
 
 
 
-
-
-
-
-
 if __name__ == '__main__':
     start = start_game()
     print(start)
